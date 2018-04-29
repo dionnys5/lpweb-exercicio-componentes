@@ -4,10 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
+import { CalculoEquacaoRetaComponent } from './calculo-equacao-reta/calculo-equacao-reta.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalculoEquacaoRetaComponent
   ],
   imports: [
     NgbModule.forRoot(),
