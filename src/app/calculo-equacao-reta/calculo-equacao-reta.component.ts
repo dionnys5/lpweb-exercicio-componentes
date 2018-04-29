@@ -18,6 +18,9 @@ export class CalculoEquacaoRetaComponent implements OnInit {
                 let m = (this.ponto_b[1] - this.ponto_a[1])/ (this.ponto_b[0] - this.ponto_a[0]);
                 const c = m * (this.ponto_a[0] * -1) + this.ponto_a[1];
                 console.log('Resposta: y = '+ m +'x' + c);
+                let angleRad = Math.atan((this.ponto_a[1]-this.ponto_b[1])/(this.ponto_a[0]-this.ponto_b[0]));
+                let angleDeg = angleRad * 180 / Math.PI;
+
             }
         }
       if (this.ponto_a && this.coeficiente) {
