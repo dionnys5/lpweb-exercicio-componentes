@@ -7,7 +7,7 @@ import {Component, Output} from '@angular/core';
 })
 export class AppComponent {
   @Output() a = [2, 7];
-  @Output() b = null;
-  @Output() m = 4;
+  @Output() b = [-1, -5];
+  @Output() m = null;
 
 }
