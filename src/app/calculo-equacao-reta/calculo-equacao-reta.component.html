@@ -11,11 +11,11 @@
         <p>O angulo é: <strong>{{angulo}}º</strong></p>
     </div>
     <div class="" *ngIf="ponto_a && ponto_b">
-        <kendo-chart [categoryAxis]="{categories: ['Ponto A', 'Ponto B']}">
+        <kendo-chart>
             <kendo-chart-title text="Student Example"></kendo-chart-title>
             <kendo-chart-legend position="bottom" orientation="orizontal"></kendo-chart-legend>
             <kendo-chart-series>
-                <kendo-chart-series-item type="line" [data]="[ponto_a, ponto_b]">
+                <kendo-chart-series-item type="scatterLine" [data]="[ponto_a, ponto_b]" [name]="['Ponto B', ' Ponto A']">
                 </kendo-chart-series-item>
             </kendo-chart-series>
         </kendo-chart>

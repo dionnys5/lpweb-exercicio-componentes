@@ -13,7 +13,16 @@ export class CalculoEquacaoRetaComponent implements OnInit {
     problema = null;
     equacao = null;
     angulo = null;
-    dados_graph = [this.ponto_a, this.ponto_b];
+    dados = [
+        {
+            name: 'Ponto A',
+            data: this.ponto_a
+        },
+        {
+            name: 'Ponto B',
+            data: this.ponto_b
+        }
+    ];
 
   constructor() { }
   ngOnInit() {
