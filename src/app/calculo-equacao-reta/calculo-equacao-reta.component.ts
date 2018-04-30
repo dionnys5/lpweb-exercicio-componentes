@@ -1,9 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-calculo-equacao-reta',
   templateUrl: './calculo-equacao-reta.component.html',
-  styleUrls: ['./calculo-equacao-reta.component.css']
+  styleUrls: ['./calculo-equacao-reta.component.css', '../../../node_modules/@progress/kendo-theme-default/dist/all.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class CalculoEquacaoRetaComponent implements OnInit {
     @Input() ponto_a = null;
@@ -12,6 +13,8 @@ export class CalculoEquacaoRetaComponent implements OnInit {
     problema = null;
     equacao = null;
     angulo = null;
+    dados_graph = [this.ponto_a, this.ponto_b];
+
   constructor() { }
   ngOnInit() {
         if(this.ponto_a && this.ponto_b) {
@@ -35,6 +38,7 @@ export class CalculoEquacaoRetaComponent implements OnInit {
                 this.problema = 'Valores de entrada incorretos';
             }
         }
+
   }
 
 }

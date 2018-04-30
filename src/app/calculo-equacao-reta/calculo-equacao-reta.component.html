@@ -7,8 +7,18 @@
         <p>{{problema}}</p>
     </div>
     <div *ngIf="!problema">
-        <p>A equação para os pontos ({{ponto_a[0]}}, {{ponto_a[1]}}) e ({{ponto_b[0]}}, {{ponto_b[1]}}) é: {{equacao}}</p>
-        <p>O angulo é: {{angulo}}º</p>
+        <p>A equação para os pontos ({{ponto_a[0]}}, {{ponto_a[1]}}) e ({{ponto_b[0]}}, {{ponto_b[1]}}) é: <strong>{{equacao}}</strong></p>
+        <p>O angulo é: <strong>{{angulo}}º</strong></p>
+    </div>
+    <div class="" *ngIf="ponto_a && ponto_b">
+        <kendo-chart [categoryAxis]="{categories: ['Ponto A', 'Ponto B']}">
+            <kendo-chart-title text="Student Example"></kendo-chart-title>
+            <kendo-chart-legend position="bottom" orientation="orizontal"></kendo-chart-legend>
+            <kendo-chart-series>
+                <kendo-chart-series-item type="line" [data]="[ponto_a, ponto_b]">
+                </kendo-chart-series-item>
+            </kendo-chart-series>
+        </kendo-chart>
     </div>
 </div>
 
