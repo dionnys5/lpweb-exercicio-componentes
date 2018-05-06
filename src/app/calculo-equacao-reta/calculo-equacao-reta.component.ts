@@ -13,27 +13,17 @@ export class CalculoEquacaoRetaComponent implements OnInit {
     problema = null;
     equacao = null;
     angulo = null;
-    dados = [
-        {
-            name: 'Ponto A',
-            data: this.ponto_a
-        },
-        {
-            name: 'Ponto B',
-            data: this.ponto_b
-        }
-    ];
 
   constructor() { }
   ngOnInit() {
         if(this.ponto_a && this.ponto_b) {
-            if (this.ponto_a[0] + this.ponto_b[0] === 0) {
+            if (this.ponto_a[0] === this.ponto_b[0]) {
                 this.problema = 'Valores de x inválidos';
             } else {
                 let m = (this.ponto_b[1] - this.ponto_a[1])/ (this.ponto_b[0] - this.ponto_a[0]);
                 const c = m * (this.ponto_a[0] * -1) + this.ponto_a[1];
                 this.equacao =  'y = '+ m +'x' + c;
-                let angleRad = Math.atan((this.ponto_a[1]-this.ponto_b[1])/(this.ponto_a[0]-this.ponto_b[0]));
+                let angleRad = Math.atan(m);
                 let angleDeg = angleRad * 180 / Math.PI;
                 this.angulo = Math.round(angleDeg * 100) / 100;
 
@@ -44,7 +34,7 @@ export class CalculoEquacaoRetaComponent implements OnInit {
                 const c = m * (this.ponto_a[0] * -1) + this.ponto_a[1];
                 console.log('Resposta: y = ' + m + 'x' + c);
             } else {
-                this.problema = 'Valores de entrada incorretos';
+                this.problema = 'Valores de entrada insuficientes';
             }
         }
 

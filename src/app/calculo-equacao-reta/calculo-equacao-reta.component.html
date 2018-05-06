@@ -10,9 +10,9 @@
         <p>A equação para os pontos ({{ponto_a[0]}}, {{ponto_a[1]}}) e ({{ponto_b[0]}}, {{ponto_b[1]}}) é: <strong>{{equacao}}</strong></p>
         <p>O angulo é: <strong>{{angulo}}º</strong></p>
     </div>
-    <div class="" *ngIf="ponto_a && ponto_b">
+    <div class="" *ngIf="!this.problema">
         <kendo-chart>
-            <kendo-chart-title text="Student Example"></kendo-chart-title>
+            <kendo-chart-title text="Gráfico da reta"></kendo-chart-title>
             <kendo-chart-legend position="bottom" orientation="orizontal"></kendo-chart-legend>
             <kendo-chart-series>
                 <kendo-chart-series-item type="scatterLine" [data]="[ponto_a, ponto_b]" [name]="['Ponto B', ' Ponto A']">
